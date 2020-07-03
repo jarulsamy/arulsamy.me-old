@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  web:
+    container_name: arulsamy.me
+    image: "httpd:alpine"
+    ports:
+      - "8884:80"
+    environment:
+      TZ: "America/Denver"
+    volumes:
+      - "./htdocs/:/usr/local/apache2/htdocs"
+    restart: unless-stopped
